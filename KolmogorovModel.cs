@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -251,7 +251,7 @@ namespace UStandard
                 if (z > 0.5 && value > 0.5) ++right;
                 ++total;
             }
-            double ratio = (double)(right);
+            double ratio = (double)(total - right);
             ratio /= (double)(total);
             return ratio;
         }
@@ -314,7 +314,7 @@ namespace UStandard
                 BuildRepresentation(M, top, steps, mu);
                 double selectionError = DoSelectionQuantized();
                 double testError = DoTestQuantized();
-                Console.WriteLine("Run = {0}, selection sample error = {1:0.0000}, test sample error = {2:0.0000}", count, selectionError, testError);
+                Console.WriteLine("Run = {0}, selection sample error = {1:0.0000}, test sample accuracy = {2:0.0000}", count, selectionError, testError);
             }
         }
     }
